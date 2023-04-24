@@ -48,21 +48,22 @@ public:
 
 int main() {
 
+     // Maak een object g van type Grunt (g is een instantiatie van klass Grunt)
     Grunt g1 = Grunt(0,0,100);
     Grunt g2 = Grunt(10,50,80);
     Grunt g3 = Grunt();
 
     g1.x = 100; //werkt alleen als x public is
 
-
+    // Move grunt g met (50,30)
     g1.move(50,30);
     std::cout<< "grunt g1 staat op positie: (" << g1.getX() << "," << g1.getY() <<")" <<std::endl;
 
     g1.move(40,20);
     std::cout<< "grunt g1 staat op positie: (" << g1.getX() << "," << g1.getY() <<")" <<std::endl;
-    // Maak een object g van type Grunt (g is een instantiatie van klass Grunt)
+   
 
-    // Move grunt g met (10,10)
+    
 
     return 0;
 }
