@@ -17,5 +17,6 @@ class Customer{
 
     //overloaden van operator<< en overloaden operator==
     friend std::ostream& operator<<(std::ostream& out, Customer& c);
+    friend bool operator==(Customer lhs, Customer rhs);
 
 };

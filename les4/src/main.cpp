@@ -1,45 +1,53 @@
-#include <iostream>
 #include <ctime>
+#include <iostream>
+#include <vector>
 
 #include "include/car.hpp"
-#include "include/customer.hpp"
 #include "include/carrental.hpp"
+#include "include/customer.hpp"
 
-//function overloading
+// function overloading
 
-int add(int a, int b){
+int add(int a, int b) {
     return a + b;
 }
 
-double add(int a, double b){
+double add(int a, double b) {
     return a + b;
 }
 
-double add(double a, double b){
+double add(double a, double b) {
     return a + b;
 }
 
-std::ostream& operator<<(std::ostream& out, CarRental my_carrental){
-    out << my_carrental.toString();
-    return out;
-}
+int main() {
 
-
-int main(){
-     
     double x = 3.5;
     int y = 2;
 
-    add(y,x);
+    // welke add wordt nu aangeroepen?
+    add(y, x);
 
-    
-
-  
     Car car1 = Car("Peugeot", 100);
     Customer customer1 = Customer("Rianne");
-    std::cout << customer1;
-    //CarRental rental1 = CarRental(car1, customer1, 10);
-    //std::cout << rental1;
-    
+    Customer customer2 = Customer("Bas");
+
+    // verwijder een object uit een vector
+    std::vector<Customer> customers = {customer1, customer2};
+    for (Customer c : customers) {
+        std::cout << c << std::endl;
+    }
+
+    customers.erase(remove(customers.begin(), customers.end(), customer1));
+
+    std::cout << "Na verwijderen van customer 1 " << std::endl;
+
+    for (Customer c : customers) {
+        std::cout << c << std::endl;
+    }
+    // std::cout << customer1;
+    // CarRental rental1 = CarRental(car1, customer1, 10);
+    // std::cout << rental1;
+
     return 0;
 }
