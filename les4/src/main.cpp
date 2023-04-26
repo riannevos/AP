@@ -38,8 +38,15 @@ int main() {
         std::cout << c << std::endl;
     }
 
-    customers.erase(remove(customers.begin(), customers.end(), customer1));
+    //Om customer1 te verwijderen kun je de volgende one-liner gebruiken, maar dit lijkt niet bij iedereen te werken
+    //customers.erase(remove(customers.begin(), customers.end(), customer1), customers.end());
 
+    //Alternatief om customer1 uit de vector te verwijderen 
+    for(int i = 0; i < customers.size(); i++){
+        if(customers[i]== customer1){
+            customers.erase(customers.begin()+i);
+        }
+    }
     std::cout << "Na verwijderen van customer 1 " << std::endl;
 
     for (Customer c : customers) {
