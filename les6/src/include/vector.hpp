@@ -16,9 +16,12 @@ public:
     /// \brief 
     /// default constructor
     /// \details
-    /// More details
-    
+    /// Assigns 0 to both attributes.
     Vector();
+
+    /// @brief constructor
+    /// @param x de x-coordinaat van de vector van type int
+    /// @param y de y-coordinaat van de vector 
     Vector(int x, int y);
 
     Vector operator-() const;
