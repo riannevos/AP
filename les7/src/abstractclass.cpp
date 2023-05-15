@@ -26,7 +26,7 @@ class Cow: public Animal{
 };
 
 
-int main(){
+int myy_main(){
 
     Cow cow = Cow(5, "boe");
     cow.makeSound();
