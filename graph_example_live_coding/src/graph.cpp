@@ -9,6 +9,7 @@ Edge* Graph::getEdgeBetweenNodes(Node* from, Node* to){
             return edge;
         }
     }
+    return nullptr; //Niet mooi, werkt wel
 }
 
 int Graph::getCostOfPath(std::vector<Node*> nodesToVisit) {
