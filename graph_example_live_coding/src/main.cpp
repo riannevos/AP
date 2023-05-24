@@ -33,7 +33,7 @@ int main(){
 
     Edge* edgebetweennodes= g.getEdgeBetweenNodes(&a, &b);
     if(edgebetweennodes!=nullptr){
-        std::cout << *g.getEdgeBetweenNodes(&a, &b);
+        std::cout << edgebetweennodes;
     }else{
         std::cout << "Er bestaat geen edge tussen deze nodes";
     }
@@ -42,6 +42,6 @@ int main(){
 
     std::vector<Node*> nodesInPath = {&a, &b, &c, &d, &f};
 
-    //std::cout << "Cost of path " << g.getCostOfPath(nodesInPath) << "\n";
+    std::cout << "Cost of path " << g.getCostOfPath(nodesInPath) << "\n";
 
 }
