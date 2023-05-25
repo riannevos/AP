@@ -20,27 +20,31 @@ int main() {
     Car* c1adr = &c1; // sla adres van c1 op
     Car* c2adr = &c2; // sla adres van c2 op
 
-    // std::cout << c1adr << "\n";
-    // std::cout << *c1adr <<"\n"; //Met * halen we het object uit het adres
-    // std::cout << c1; //Is het zelfde als de regel hierboven
+    //We printen het adres van c1
+    std::cout << c1adr << "\n";
 
-    //haal attribuut uit pointer (adres)
+    std::cout << *c1adr <<"\n"; //Met * halen we het object uit het adres
+    std::cout << c1; //Doet hetzelfde als de regel hierboven
+
 
 
     //voorbeeld met vectoren
     std::vector<Car> cars = {c1, c2};
     c1.brand = "Honda";
 
-    // for(Car c: cars){
-    //     std::cout << c;
-    // }
+    //Als we c1 aanpassen nadat die aan de vector toegevoegd is, zal het object in de vector niet veranderen (Dit is een copy)
+    for(Car c: cars){
+         std::cout << c;
+    }
 
+    //Als we pointers in de vector stoppen, dan verwijst die wel naar het veranderde object
     std::vector<Car*> carAdresses = {&c1, &c2};
     c1.brand = "Citroen";
 
     for(Car* car: carAdresses){
         std::cout << car->brand;
     }
+    //We gebruiken -> om een attribuut op te halen uit een pointer. Dit is gelijk aan (*car).brand
 
 
     return 0;
